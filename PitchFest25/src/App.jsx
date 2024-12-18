@@ -1,9 +1,18 @@
-function App() {
-  return (
-    <div className="bg-blue-500 text-white text-3xl p-6">
-      Hello, Tailwind CSS!
+import React from 'react';
+import Aboutus from './Aboutus';
+import VideoSection from './VideoSection';
+export default function App() {
+  return(
+    <div>
+      <Aboutus />
+
+      <VideoSection />
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+
+
+

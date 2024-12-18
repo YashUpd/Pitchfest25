@@ -1,13 +1,17 @@
-import Banner from "./Banner";
-import Navbar from "./Navbar";
-
-function App() {
-  return (
-    <div className="bg-black">
-      <Banner/> 
-      <Navbar/>
+import React from 'react';
+import Aboutus from './Aboutus';
+import VideoSection from './VideoSection';
+export default function App() {
+  return(
+    <div>
+      <Aboutus />
+      <VideoSection />
     </div>
-  );
+  )
 }
 
-export default App;
+
+
+
+
+

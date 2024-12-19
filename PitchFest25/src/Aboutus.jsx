@@ -11,7 +11,7 @@ const Aboutus = () => {
     <div className="flex justify-center items-center min-h-screen ">
       <div className="flex flex-col md:flex-row justify-center items-center w-[80%] p-8 bg-white shadow-lg rounded-2xl border-white gap-4">
         <div className="w-1/3 rounded-xl">
-          <img src="../public/assets/About.png" alt="About Us" className="w-full rounded-xl" />
+          <img src="/assets/About.png" alt="About Us" className="w-full rounded-xl" />
         </div>
         <div className="w-2/3 bg-[#FFD42E8A] rounded-xl ">
           <h1 className="text-3xl font-bold  text-black px-4 py-2">About Us</h1>

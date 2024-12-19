@@ -17,7 +17,7 @@ export default function App() {
     {Loading ? (
       <div className="w-full h-screen flex justify-center items-center bg-black">
          <video className=" w-1/3" autoPlay muted>
-            <source src="../public/assets/Loading.mp4" type="video/mp4" />
+            <source src="/assets/Loading.mp4" type="video/mp4" />
           </video>
       </div>
     ) : (
@@ -25,7 +25,7 @@ export default function App() {
         <Home />
         <Info />
         <div className="w-full flex justify-center items-center">
-          <img src="../public/assets/Partners.jpg" className="w-full" alt="Partners" />
+          <img src="/assets/Partners.jpg" className="w-full" alt="Partners" />
         </div>
       </div>
     )}

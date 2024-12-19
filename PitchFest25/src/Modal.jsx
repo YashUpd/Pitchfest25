@@ -22,7 +22,7 @@ const Modal = ({ isOpen, onClose }) => {
         transition={{ type: 'spring', stiffness: 400, damping: 25 }}
       >
         <div className="bg-white flex justify-start items-start rounded-lg">
-          <img src='../public/assets/Modal.png' alt='Modal'
+          <img src='/assets/Modal.png' alt='Modal'
           className='w-56'/>
         </div>
         <div className='flex flex-col justify-center items-start text-start gap-4 p-2 '>

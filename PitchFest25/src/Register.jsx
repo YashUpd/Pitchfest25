@@ -8,12 +8,12 @@ const Register = () => {
     <div className="flex justify-center items-center bg-white rounded-xl shadow-2xl m-28">
         <div className="flex flex-col justify-center items-center p-4 gap-4">
             <div className="w-full">
-                <img src='../public/assets/Head.png'
+                <img src='/assets/Head.png'
                 className="rounded-xl "/>
             </div>
             <div className="flex justify-center items-center ">
                 <div className="w-1/3">
-                <img src="../public/assets/Register.png"/>
+                <img src="/assets/Register.png"/>
                 </div>
                 <div className=" p-4 bg-[#FFD42E8A] w-2/3 rounded-xl">
                     <h1 className="font-bold text-xl pb-4">Ready to Take Your Startup to the Next Level?</h1>

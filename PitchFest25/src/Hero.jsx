@@ -9,7 +9,7 @@ const Hero = () => {
         animate={{opacity:0.1}} 
         transition={{ duration: 1 }}
       >
-        <img src='../public/assets/logo.png' alt="Logo" className="h-[350px]" />
+        <img src='/assets/logo.png' alt="Logo" className="h-[350px]" />
       </motion.div>
       <motion.div
         className="flex flex-col justify-center items-center text-center align-middle text-2xl text-white"

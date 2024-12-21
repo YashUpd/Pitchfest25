@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Info from './Info';
 import Footer from './Footer';
+import Partial from './Partial';
 export default function App() {
   const [Loading,setLoading] = useState(true);
 
@@ -25,10 +26,7 @@ export default function App() {
       <div>
         <Home />
         <Info />
-        <div className="w-full flex justify-center items-center">
-          <img src="/assets/Partners2.jpg" className="w-full" alt="Partners" />
-        </div>
-        <Footer/>
+        <Partial/>
       </div>
     )}
   </div>

@@ -11,7 +11,7 @@ const Aboutus = () => {
     <div className="flex justify-center items-center min-h-screen ">
       <div className="flex flex-col md:flex-row justify-center items-center w-[80%] p-8 bg-white shadow-lg rounded-2xl border-white gap-4">
         <div className="w-1/3 rounded-xl">
-          <img src="/assets/About.png" alt="About Us" className="w-full rounded-xl" />
+          <img src="/assets/About.png" alt="About Us" className="w-full rounded-xl object-cover h-auto" />
         </div>
         <div className="w-2/3 bg-[#FFD42E8A] rounded-xl ">
           <h1 className="text-3xl font-bold  text-black px-4 py-2">About Us</h1>
@@ -27,7 +27,7 @@ const Aboutus = () => {
             level in one of the most dynamic startup ecosystems around!
           </p>
           <div className="flex justify-start items-center px-4 py-2">
-            <button className="bg-white font-normal py-1 px-3 text-[#FCC15A] text-lg flex justify-start items-center shadow-xl"
+            <button className="bg-white font-normal py-1 px-3 text-[#FCC15A] text-lg flex justify-start items-center shadow-xl rounded-lg"
             onClick={openModal}>
               Read more
             <motion.span
@@ -38,7 +38,7 @@ const Aboutus = () => {
               repeat:Infinity,
               repeatType:"loop"
             }}
-            className="pt-1">
+            >
               <ChevronsRight/>
             </motion.span>
             </button>

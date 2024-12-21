@@ -61,50 +61,50 @@ const Timer = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="flex justify-center items-center gap-6">
+      <div className="flex justify-center items-center gap-4 md:gap-6 lg:gap-8">
         <div className="flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center gap-2">
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+          <div className="flex justify-center items-center gap-1 sm:gap-2">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Math.floor(Day / 10)}
             </span>
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Day % 10}
             </span>
           </div>
-          <div className="text-xl font-normal text-white">DAYS</div>
+          <div className="text-sm sm:text-lg md:text-xl font-normal text-white">DAYS</div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center gap-2">
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+          <div className="flex justify-center items-center gap-1 sm:gap-2">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Math.floor(Hour / 10)}
             </span>
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Hour % 10}
             </span>
           </div>
-          <div className="text-xl font-normal text-white">HRS</div>
+          <div className="text-sm sm:text-lg md:text-xl font-normal text-white">HRS</div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center gap-2">
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+          <div className="flex justify-center items-center  gap-1 sm:gap-2">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Math.floor(Min / 10)}
             </span>
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Min % 10}
             </span>
           </div>
-          <div className="text-xl font-normal text-white">MIN</div>
+          <div className="text-sm sm:text-lg md:text-xl font-normal text-white">MIN</div>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="flex justify-center items-center gap-2">
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+          <div className="flex justify-center items-center  gap-1 sm:gap-2">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Math.floor(Sec / 10)}
             </span>
-            <span className="bg-slate-400/30 text-4xl font-bold text-white p-4">
+            <span className="bg-slate-400/30 text-2xl md:text-3xl font-semibold text-white p-2 sm:p-3 md:p-4 rounded-lg">
               {Sec % 10}
             </span>
           </div>
-          <div className="text-xl font-normal text-white">SEC</div>
+          <div className="text-sm sm:text-lg md:text-xl font-normal text-white">SEC</div>
         </div>
       </div>
     </div>

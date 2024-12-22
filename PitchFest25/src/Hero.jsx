@@ -1,10 +1,11 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import Timer from "./Timer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const [IsHidden, setIsHidden] = useState(false);
   const [scrollAnimation, setScrollAnimation] = useState(false);
+  const [isMobile,setisMobile] = useState(false);
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (y) => {
     if(y>30){
@@ -16,6 +17,14 @@ const Hero = () => {
       setScrollAnimation(false)
     }
   });
+  useEffect(() => {
+    const handleResize = () => {
+      setisMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center my-10 md:my-6">
       <motion.div
@@ -34,7 +43,7 @@ const Hero = () => {
         animate={scrollAnimation ? "show" : "hide"}
         variants={{
           hide: { opacity: 0, y: 0 },
-          show: { opacity: 1, y:-300},
+          show: { opacity: 1, y:isMobile?-150:-300},
         }}
         transition={{ duration: 1, ease: "easeInOut", type: "spring", }}
         className="flex flex-col justify-center items-center text-center align-middle text-2xl text-white sm:[--up-to1:-150px]"
@@ -58,7 +67,7 @@ const Hero = () => {
         animate={scrollAnimation ? "show" : "hide"}
         variants={{
           hide: { opacity: 0, y: 0 },
-          show: { opacity: 1, y:-250},
+          show: { opacity: 1, y:isMobile?-120:-250},
         }}
         transition={{ duration: 2, ease: "easeInOut", type: "spring",}}
         className="flex flex-col justify-center items-center text-center max-sm:[--up-to2:-125px]"

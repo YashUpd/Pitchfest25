@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Info from './Info';
 import Footer from './Footer';
+import Partial from './Partial';
 export default function App() {
   const [Loading,setLoading] = useState(true);
 
@@ -17,7 +18,7 @@ export default function App() {
     <div>
     {Loading ? (
       <div className="w-full h-screen flex justify-center items-center bg-black">
-         <video className=" w-1/3" autoPlay muted>
+         <video className=" w-2/3 md:w-1/3 md:pt-12" autoPlay muted>
             <source src="/assets/Loading.mp4" type="video/mp4" />
           </video>
       </div>
@@ -25,10 +26,8 @@ export default function App() {
       <div>
         <Home />
         <Info />
-        <div className="w-full flex justify-center items-center">
-          <img src="/assets/Partners2.jpg" className="w-full" alt="Partners" />
-        </div>
-        <Footer/>
+        <Partial/>
+        <div className='bg-custom-gradient text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production 🙂</div>
       </div>
     )}
   </div>

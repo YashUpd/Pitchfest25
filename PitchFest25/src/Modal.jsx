@@ -14,7 +14,7 @@ const Modal = ({ isOpen, onClose }) => {
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="bg-custom-gradient flex flex-col py-2 justify-center items-center rounded-lg w-80"
+        className="bg-custom-gradient flex flex-col py-2 justify-center items-center rounded-lg w-[90%] md:w-80"
         onClick={(e) => e.stopPropagation()} 
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -26,10 +26,10 @@ const Modal = ({ isOpen, onClose }) => {
           className='w-72 bg-white rounded-xl'/>
         </div>
         <div className='flex flex-col justify-center items-start text-start gap-2 px-2 '>
-          <h1 className='text-white font-bold'>ACIC-BMU|Propel</h1>
+          <h1 className='text-white font-bold text-lg md:text-xl'>ACIC-BMU|Propel</h1>
           <p className='text-white text-sm'>The ACIC-BMU Foundation, supported by Atal Innovation Mission (AIM), NITI Aayog, and BMU, focuses on promoting startups and innovators by providing resources, mentorship, and opportunities.</p>
           <p className='text-white text-sm pb-2'>Propel Pitchfest, hosted by ACIC-BMU, is our flagship platform where innovators present their ideas to encourage entrepreneurship and creativity, driving impactful solutions for the future.</p>
-          <button className='bg-white text-[#126782] flex justify-center items-center px-2 rounded-lg mb-2'
+          <button className='bg-white text-[#126782] flex justify-center items-center px-2 rounded-md mb-2'
           onClick={redirect}>Visit Linkedin
           <motion.span
               animate={{x:[0,6,0]}}

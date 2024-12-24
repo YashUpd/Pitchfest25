@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Info from './Info';
-import Footer from './Footer';
 import Partial from './Partial';
 export default function App() {
   const [Loading,setLoading] = useState(true);

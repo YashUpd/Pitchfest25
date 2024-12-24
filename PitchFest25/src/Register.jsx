@@ -24,16 +24,16 @@ const Register = () => {
             />
           </div>
           <div className=" p-4 bg-[#FFD42E8A] md:w-2/3 rounded-xl">
-            <h1 className="text-xl md:text-2xl  font-bold text-black py-2">
+            <h1 className="text-xl md:text-2xl  font-bold text-black py-2 mb-4">
               Ready to Take Your Startup to the Next Level?
             </h1>
-            <p className="text-black text-justify text-base md:text-lg l">
+            <p className="text-black text-justify text-base md:text-lg l mb-4">
               Don't miss out on this incredible opportunity to showcase your
               innovation, connect with industry leaders, and secure funding for
               your startup. PitchFest 2025 is your chance to shine in front of
               top investors and mentors.
             </p>
-            <h1 className="text-xl md:text-2xl font-bold text-black py-2">
+            <h1 className="text-xl md:text-2xl font-bold text-black py-2 mb-6">
               Register Now and Get Ready to Pitch!
             </h1>
             <p className="text-black text-justify text-base md:text-lg  pb-4">

@@ -26,7 +26,7 @@ export default function App() {
         <Home />
         <Info />
         <Partial/>
-        <div className='bg-custom-gradient text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production 🙂</div>
+        <div className='bg-custom-gradient text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production </div>
       </div>
     )}
   </div>

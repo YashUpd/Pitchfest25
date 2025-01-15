@@ -8,12 +8,16 @@ const Categories = () => {
           Two Tracks
         </h1>
         <div className="flex justify-evenly gap-10 items-center">
-          < img src={'/assets/top1.png'} 
-          className="bg-custom-gradient p-4 rounded-full"/>
+          <img
+            src='/assets/top1.png'
+            className="bg-custom-gradient p-4 rounded-full"
+          />
           <Textbox text={"Revenue"} />
           <Textbox text={"Pre-Revenue"} />
-          <img src={'/assets/top2.png'} 
-          className="bg-custom-gradient p-4 rounded-full"/>
+          <img
+            src='/assets/top2.png'
+            className="bg-custom-gradient p-4 rounded-full"
+          />
         </div>
       </div>
       <div className="flex flex-col items-center gap-5 p-4 mb-20">

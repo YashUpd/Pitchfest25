@@ -4,9 +4,8 @@ import { IoMdMail } from "react-icons/io";
 
 const Partial = () => {
   return (
-    <div className="flex justify-center items-center bg-white rounded-2xl shadow-2xl p-2 mx-4 my-8 sm:m-10 lg:m-28">
+    <div className="flex justify-center items-center bg-white rounded-2xl shadow-2xl p-2 mx-4 my-8 sm:m-10 lg:m-28 ">
       <div className="flex flex-col justify-center items-center p-2 gap-4 w-full">
-        {/* Image Section */}
         <div className="w-full">
           <img
             src="/assets/Partners2.jpg"
@@ -14,10 +13,7 @@ const Partial = () => {
             alt="Partners"
           />
         </div>
-
-        {/* Links Section */}
         <div className="bg-custom-gradient flex flex-col justify-start items-start p-2 md:p-4 md:grid md:grid-cols-4 gap-4 md:gap-2 w-full py-4 rounded-b-lg">
-          {/* Instagram Link */}
           <a
             className="flex justify-center items-center"
             href="https://www.instagram.com/acicbmu/"
@@ -29,8 +25,6 @@ const Partial = () => {
               acicbmu
             </span>
           </a>
-
-          {/* LinkedIn Link */}
           <a
             className="flex justify-center items-center"
             href="https://www.linkedin.com/company/acic-bmu-foundation/"
@@ -42,8 +36,6 @@ const Partial = () => {
               ACIC-BMU Foundation
             </span>
           </a>
-
-          {/* Website Link */}
           <a
             className="flex justify-center items-center"
             href="https://www.acic-bmu.in/"
@@ -55,8 +47,6 @@ const Partial = () => {
               acic-bmu.in
             </span>
           </a>
-
-          {/* Email Link */}
           <a
             className="flex justify-center items-center"
             href="mailto:pitchfest@bmu.edu.in"

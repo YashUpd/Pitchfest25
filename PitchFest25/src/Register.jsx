@@ -23,17 +23,20 @@ const Register = () => {
               className="w-full h-40 md:w-full object-cover md:h-full sm:object-contain md:object-scale-down"
             />
           </div>
-          <div className=" p-4 bg-[#FFD42E8A] md:w-2/3 rounded-xl">
-            <h1 className="text-xl md:text-2xl  font-bold text-black py-2 mb-4">
+          <div className=" p-2 bg-[#FFD42E8A] md:w-2/3 rounded-xl">
+            <div className="flex flex-col mb-4">
+            <h1 className="text-xl md:text-2xl  font-bold text-black py-2 ">
               Ready to Take Your Startup to the Next Level?
             </h1>
-            <p className="text-black text-justify text-base md:text-lg l mb-4">
+            <p className="text-black text-justify text-base md:text-lg l mb-6">
               Don't miss out on this incredible opportunity to showcase your
               innovation, connect with industry leaders, and secure funding for
               your startup. PitchFest 2025 is your chance to shine in front of
               top investors and mentors.
             </p>
-            <h1 className="text-xl md:text-2xl font-bold text-black py-2 mb-6">
+            </div>
+            <div className="flex flex-col mb-4">
+            <h1 className="text-xl md:text-2xl font-bold text-black py-2">
               Register Now and Get Ready to Pitch!
             </h1>
             <p className="text-black text-justify text-base md:text-lg  pb-4">
@@ -41,6 +44,7 @@ const Register = () => {
               business. Click the button below to start your registration
               process.
             </p>
+            </div>
             <button
               className="bg-white font-normal py-1 px-3 text-[#FCC15A] text-lg flex justify-start items-center shadow-xl rounded-lg"
               onClick={redirect}

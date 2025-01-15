@@ -62,7 +62,6 @@ const Hero = () => {
         </p>
       </motion.div>
       <motion.div
-        
         initial={{ opacity: 0, y: 0 }}
         animate={scrollAnimation ? "show" : "hide"}
         variants={{

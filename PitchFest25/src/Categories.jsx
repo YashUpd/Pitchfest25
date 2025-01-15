@@ -26,7 +26,7 @@ const Categories = () => {
         </h1>
         <div className="flex justify-between gap-12">
           <div className="flex flex-col items-center">
-            <Images img={'assets/women_funded.png'} />
+            <Images img={'/assets/women_funded.png'} />
             <h1 className="text-center">
               Women
               <br />
@@ -34,7 +34,7 @@ const Categories = () => {
             </h1>
           </div>
           <div className="flex flex-col items-center">
-            <Images img={'assets/smart.png'} />
+            <Images img={'/assets/smart.png'} />
             <h1 className="text-center">
               Smart
               <br />
@@ -42,14 +42,14 @@ const Categories = () => {
             </h1>
           </div>
           <div className="flex flex-col items-center">
-            <Images img={'assets/Sustainable.png'} />
+            <Images img={'/assets/Sustainable.png'} />
             <h1 className="text-center">
               Sustainability
               <br />& Social Impact
             </h1>
           </div>
           <div className="flex flex-col items-center">
-            <Images img={'assets/Medical.png'} />
+            <Images img={'/assets/Medical.png'} />
             <h1 className="text-center">
               Medical
               <br />
@@ -59,15 +59,15 @@ const Categories = () => {
         </div>
         <div className="flex justify-between gap-12">
           <div className="flex flex-col items-center">
-            <Images img={'assets/clean.png'} />
+            <Images img={'/assets/clean.png'} />
             <h1 className="whitespace-nowrap">Clean Energy</h1>
           </div>
           <div className="flex flex-col items-center">
-            <Images img={'assets/deep.png'} />
+            <Images img={'/assets/deep.png'} />
             <h1 className="whitespace-nowrap">Deep Tech</h1>
           </div>
           <div className="flex flex-col items-center">
-            <Images img={'assets/Mobility.png'} />
+            <Images img={'/assets/Mobility.png'} />
             <h1 className="whitespace-nowrap">Mobility</h1>
           </div>
         </div>

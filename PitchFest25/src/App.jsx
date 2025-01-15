@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import Info from './Info';
 import Partial from './Partial';
+import Benefits from './Benefits';
 export default function App() {
   const [Loading,setLoading] = useState(true);
 
@@ -22,11 +23,12 @@ export default function App() {
           </video>
       </div>
     ) : (
-      <div>
+      <div className='bg-custom-gradient'>
         <Home />
         <Info />
+        <Benefits/>
         <Partial/>
-        <div className='bg-custom-gradient text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production </div>
+        <div className='bg-black text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production </div>
       </div>
     )}
   </div>

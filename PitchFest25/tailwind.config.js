@@ -6,6 +6,11 @@ export default {
       backgroundImage: {
         'custom-gradient': 'linear-gradient(90deg, rgba(5, 36, 61, 1) 0%, rgba(17, 59, 83, 1) 50%, rgba(18, 103, 130, 1) 100%)',
       },
+      colors:{
+        'yellow-background':'#FFD42E8A',
+        'yellow-text':'#FCC15A',
+        'blue-text':'#05243D'
+      }
     },
   },
   plugins: [],

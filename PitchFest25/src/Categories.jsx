@@ -1,5 +1,6 @@
 import Images from "./images";
 import Textbox from "./Textbox";
+
 const Categories = () => {
   return (
     <div className="bg-white rounded-2xl w-[80%]">
@@ -75,4 +76,5 @@ const Categories = () => {
     </div>
   );
 };
+
 export default Categories;

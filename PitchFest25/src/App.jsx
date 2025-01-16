@@ -28,7 +28,7 @@ export default function App() {
         <Info />
         <Benefits/>
         <Partial/>
-        <div className='bg-black text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production </div>
+        <div className='md:bg-[#113B53] text-[white] text-xl md:text-4xl text-center w-full p-3'>Website Still Under Production </div>
       </div>
     )}
   </div>

@@ -1,6 +1,6 @@
 {
-  "name": "Pitchfest",
-  "short_name": "PF",
+  "name": "MyWebSite",
+  "short_name": "MySite",
   "icons": [
     {
       "src": "/https://pitchfest.acic-bmu.in/assets/PF_favicon2.svg?v=2/web-app-manifest-192x192.png",

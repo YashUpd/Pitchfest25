@@ -23,23 +23,23 @@ const Register = () => {
               className="w-full md:w-full object-cover md:h-full sm:object-contain md:object-scale-down"
             />
           </div>
-          <div className="flex flex-col justify-around gap-2 py-2 md:p-2 bg-yellow-background w-2/3 rounded-lg">
-            <div className="flex flex-col gap-2 px-2 mb-1 md:mb-2 py-2">
-            <h1 className="text-[10px] sm:text-lg md:text-2xl font-bold text-black md:py-2 mb-1">
+          <div className="flex flex-col justify-around gap-1 md:gap-2 py-2 md:p-2 bg-yellow-background w-2/3 rounded-lg">
+            <div className="flex flex-col gap-0.5 md:gap-1 px-2 md:mb-2 py-2">
+            <h1 className="text-[12px] sm:text-lg md:text-2xl font-bold text-black md:py-2 md:mb-1">
               Ready to Take Your Startup to the Next Level?
             </h1>
-            <p className="text-black text-justify text-[6px] sm:text-xs md:text-lg md:mb-2 mb-1">
+            <p className="text-black text-justify text-[10px] sm:text-xs md:text-lg md:mb-1 mb-0.5">
               Don't miss out on this incredible opportunity to showcase your
               innovation, connect with industry leaders, and secure funding for
               your startup. PitchFest 2025 is your chance to shine in front of
               top investors and mentors.
             </p>
             </div>
-            <div className="flex flex-col gap-2 md:mb-1 px-2">
-            <h1 className="text-[10px] sm:text-lg md:text-2xl font-bold text-black md:py-2 mb-1">
+            <div className="flex flex-col gap-0.5 md:gap-2 px-2">
+            <h1 className="text-[12px] sm:text-lg md:text-2xl font-bold text-black md:py-2">
               Register Now and Get Ready to Pitch!
             </h1>
-            <p className="text-black text-justify text-[6px] sm:text-xs md:text-lg">
+            <p className="text-black text-justify text-[10px] sm:text-xs md:text-lg">
               Take the first step towards transforming your idea into a thriving
               business. Click the button below to start your registration
               process.

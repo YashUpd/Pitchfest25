@@ -8,7 +8,7 @@ const Register = () => {
     );
   };
   return (
-    <div className="flex justify-center items-center bg-white rounded md:rounded-xl shadow-2xl mt-6 mb-6 md:mt-6 w-[90%] md:w-[80%]">
+    <div className="flex justify-center items-center bg-white rounded-lg md:rounded-xl shadow-2xl mt-6 mb-6 md:mt-6 w-[90%] md:w-[80%]">
       <div className="flex flex-col justify-center items-center p-2 md:p-4 gap-2 md:gap-4">
         <div className="w-full flex justify-center ">
           <img
@@ -44,7 +44,7 @@ const Register = () => {
               business. Click the button below to start your registration
               process.
             </p>
-            <div className="my-1 md:my-4">
+            <div className="my-2 md:my-4">
             <button
               className="bg-white font-normal py-0 px-0.5 md:px-2 md:py-1 text-[#FCC15A] text-[10px] sm:text-xs md:text-base flex justify-start items-center shadow-xl rounded-sm"
               onClick={redirect}

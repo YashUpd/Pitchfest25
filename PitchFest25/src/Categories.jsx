@@ -2,7 +2,7 @@ import Textbox from "./Textbox"
 const Categories = () => {
   return (
     <div className="flex justify-center w-[90%] md:w-[80%] max-w-7xl mx-auto">
-      <div className="bg-white rounded-sm md:rounded-2xl w-full">
+      <div className="bg-white rounded-lg md:rounded-2xl w-full">
         <div className="flex flex-col md:p-4 p-2">
           <h1 className="text-center text-2xl md:text-3xl font-bold text-blue-text mb-6">
             Two Tracks

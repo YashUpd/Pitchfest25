@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /favicon.ico
+Allow: /css/
+Allow: /js/
+Allow: /images/

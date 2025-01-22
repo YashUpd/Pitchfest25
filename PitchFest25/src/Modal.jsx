@@ -14,14 +14,14 @@ const Modal = ({ isOpen, onClose }) => {
       exit={{ opacity: 0 }}
     >
       <motion.div
-        className="bg-custom-gradient flex flex-col py-2 justify-center items-center rounded-lg w-[90%] md:w-80"
+        className="bg-custom-gradient flex flex-col py-2 justify-center items-center rounded-lg w-[80%] md:w-80"
         onClick={(e) => e.stopPropagation()} 
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
         transition={{ type: 'spring', stiffness: 400, damping: 25 }}
       >
-        <div className= " w-full flex justify-center items-center rounded-lg py-2">
+        <div className= "w-full flex justify-center items-center rounded-lg py-2">
           <img src='/assets/Modal.png' alt='Modal'
           className='w-72 bg-white rounded-xl'/>
         </div>

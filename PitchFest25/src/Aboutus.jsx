@@ -8,7 +8,7 @@ const Aboutus = () => {
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
   return (
-    <div className="flex flex-col md:flex-row justify-center md:items-stretch w-[80%] rounded-xl md:w-[80%] md:p-2 bg-white gap-2 items-center mt-12 md:mb-20 md:mt-10 px-2 py-2">
+    <div className="flex flex-col md:flex-row justify-center md:items-stretch w-[90%] rounded md:rounded-xl md:w-[80%] md:p-2 bg-white gap-2 items-center mt-12 md:mb-20 md:mt-10 px-2 py-2">
         <div className="flex justify-center items-center md:w-1/3 w-full rounded-xl overflow-hidden bg-[#113B53]  px-4 md:p-0">
           <img src="/assets/About.png" alt="About Us" className="w-96 sm:w-full md:h-auto md:w-full  rounded-xl object-cover h-56" />
         </div>

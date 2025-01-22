@@ -8,14 +8,13 @@ const Aboutus = () => {
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
   return (
-    <div className="flex justify-center items-center mt-12 md:mb-20 md:mt-10 ">
-      <div className="flex flex-col md:flex-row justify-center items-center md:items-stretch w-[95%] md:w-[80%] md:p-2 bg-white shadow-lg rounded-xl gap-4 p-4">
-        <div className="flex justify-center items-center md:w-1/3 w-full rounded-xl overflow-hidden md:bg-[#113B53]">
-          <img src="/assets/About.png" alt="About Us" className="w-[95%] md:w-full rounded-xl object-cover h-64 md:h-auto" />
+    <div className="flex flex-col md:flex-row justify-center md:items-stretch w-[80%] rounded-xl md:w-[80%] md:p-2 bg-white gap-2 items-center mt-12 md:mb-20 md:mt-10 px-2 py-2">
+        <div className="flex justify-center items-center md:w-1/3 w-full rounded-xl overflow-hidden bg-[#113B53]  px-4 md:p-0">
+          <img src="/assets/About.png" alt="About Us" className="w-96 sm:w-full md:h-auto md:w-full  rounded-xl object-cover h-56" />
         </div>
-        <div className="w-[95%] md:w-2/3 bg-[#FFD42E8A] rounded-xl flex flex-col justify-around items-start md:px-4 md:py-2 px-4">
-          <h1 className="text-xl md:text-2xl font-bold text-black py-2">About Us</h1>
-          <p className="text-black text-justify text-base md:text-xl">
+        <div className="w-full md:w-2/3 bg-[#FFD42E8A] rounded-xl flex flex-col justify-around items-start md:px-4 md:py-2 px-3">
+          <h1 className="text-lg sm:text-xl md:text-2xl xl:text-3xl font-bold text-black py-2">About Us</h1>
+          <p className="text-black text-justify text-xs sm:text-[12px] xl:text-xl ">
             PitchFest 2025, hosted by BML Munjal University, is the ultimate
             launchpad for innovative startups to make their mark! Powered by
             ACIC-BMU | Propel, this thrilling event brings together bold
@@ -49,7 +48,6 @@ const Aboutus = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 export default Aboutus;

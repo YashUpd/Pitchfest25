@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoSection = () => {
   return (
-    <div className=" w-full md:w-[80%] shadow-sm rounded-md mt-6 mb-6 md:mt-0">
+    <div className="w-[85%] md:w-[80%] shadow-sm rounded-md mt-6 mb-6 md:mt-0">
       <div className="flex flex-col  md:flex-row justify-center items-center gap-6 md:gap-10 rounded-2xl w-full">
         <div className="flex flex-col bg-white rounded-2xl border shadow-2xl w-[95%] md:w-1/2 justify-center items-start">
         <div className="relative w-full h-0 pb-[56.25%]">

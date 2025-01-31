@@ -49,7 +49,7 @@ const Register = () => {
               className="bg-white font-normal py-0 px-0.5 md:px-2 md:py-1 text-[#FCC15A] text-[10px] sm:text-xs md:text-base flex justify-start items-center shadow-xl rounded-sm"
               onClick={redirect}
             >
-              Register Here
+              Registrations Closed
               <motion.span
               className="md:pt-0.5"
                 animate={{ x: [0, 6, 0] }}

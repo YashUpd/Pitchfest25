@@ -70,7 +70,16 @@ const Partial = () => {
   return (
     <div className="flex flex-col justify-center items-center bg-white rounded-2xl shadow-2xl p-2 mx-4 my-8 sm:m-10 lg:m-28">
       <Carousal text={"Partners"} Logos={Logos} />
-      <Carousal text={"Eco System Partners"} Logos={Logos1} />
+      <div className="flex flex-col justify-center items-center p-2 gap-4 w-full">
+      <div className="w-full bg-custom-gradient text-center text-2xl sm:text-3xl md:text-4xl p-4 rounded-t-lg text-yellow-text">
+        Eco System Partners
+      </div>
+      <div className="flex justify-center items-center gap-10 sm:gap-16">
+        <img src={Wadwani} alt="Wadwani" className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"/>
+        <img src={Tie} alt="Tie" className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"/>
+        <img src={Zoho} alt="Zoho" className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain" />
+      </div>
+     </div>
       <Carousal text={"Supporting Partners"} Logos={Logos2} />
       <div className="bg-custom-gradient w-full rounded-b-lg px-6 py-4">
         <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start sm:grid sm:grid-cols-4 gap-6 sm:gap-4">

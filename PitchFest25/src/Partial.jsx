@@ -12,7 +12,6 @@ import PedalStart from "/assets/PedalStart.png";
 import Pontaq from "/assets/Pontaq.png";
 import AHfund from "/assets/AHFund.png";
 import CampusAmgels from "/assets/CampusAngels.png";
-import FundingSimplified from "/assets/FundingSimplified.png";
 import Faad from "/assets/Faad.png";
 import VentureCatalysts from "/assets/VentureCatalysts.png";
 import IndiaHealthcareAngels from "/assets/IndianHealthcareAngels.png";
@@ -20,10 +19,15 @@ import Sanchiconnect from "/assets/Sanchiconnect.png";
 import CampusFund from "/assets/CampusFund.png";
 import Realtime from "/assets/Realtime.png";
 import IndianAngelsNetwork from "/assets/IndianAngels.png";
+import FoxHog from "/assets/FoxHog.png";
+import RV from "/assets/RV.png";
 
 import Wadwani from "/assets/Wadhwani.png";
 import Tie from "/assets/TIE.png";
 import Zoho from "/assets/Zoho.png";
+import arthyan from "/assets/arthyan.png";
+import Headstart from "/assets/Headstart.png";
+import SMU from "/assets/SMU.png";
 
 import StartUpIndia from "/assets/StartupIndia.png";
 import MeitY from "/assets/MeitY.png";
@@ -43,18 +47,25 @@ const Logos = [
   { id: 8, img: IndiaHealthcareAngels },
   { id: 9, img: Ipv },
   { id: 10, img: Faad },
-  { id: 11, img: FundingSimplified },
+  { id: 11, img: FoxHog },
   { id: 12, img: CampusAmgels },
   { id: 13, img: AHfund },
   { id: 14, img: Pontaq },
   { id: 15, img: She },
   { id: 16, img: PedalStart },
   { id: 17, img: Anthill },
+  { id: 18, img: RV },
+  //green trunk
+  //rv
+  //foxhog
 ];
 const Logos1 = [
   { id: 1, img: Wadwani },
   { id: 2, img: Tie },
   { id: 3, img: Zoho },
+  { id: 4, img: arthyan },
+
+  //arthyan,smu,headstart,
 ];
 
 const Logos2 = [
@@ -71,15 +82,21 @@ const Partial = () => {
     <div className="flex flex-col justify-center items-center bg-white rounded-2xl shadow-2xl p-2 mx-4 my-8 sm:m-10 lg:m-28">
       <Carousal text={"Partners"} Logos={Logos} />
       <div className="flex flex-col justify-center items-center p-2 gap-4 w-full">
-      <div className="w-full bg-custom-gradient text-center text-2xl sm:text-3xl md:text-4xl p-4 rounded-t-lg text-yellow-text">
-        Eco System Partners
+        <div className="w-full bg-custom-gradient text-center text-2xl sm:text-3xl md:text-4xl p-4 rounded-t-lg text-yellow-text">
+          Eco System Partners
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 w-full px-4">
+          {[Wadwani, Tie, Zoho, arthyan, Headstart, SMU].map((logo, index) => (
+            <img
+              key={index}
+              src={logo}
+              alt={`Logo ${index}`}
+              className="w-20 sm:w-28 md:w-36 lg:w-44 max-w-xs sm:max-w-sm h-auto object-contain"
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex justify-center items-center gap-10 sm:gap-16">
-        <img src={Wadwani} alt="Wadwani" className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"/>
-        <img src={Tie} alt="Tie" className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"/>
-        <img src={Zoho} alt="Zoho" className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain" />
-      </div>
-     </div>
+
       <Carousal text={"Supporting Partners"} Logos={Logos2} />
       <div className="bg-custom-gradient w-full rounded-b-lg px-6 py-4">
         <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start sm:grid sm:grid-cols-4 gap-6 sm:gap-4">
@@ -127,7 +144,7 @@ const Partial = () => {
           </a>
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 

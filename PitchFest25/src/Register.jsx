@@ -8,7 +8,7 @@ const Register = () => {
     );
   };
   return (
-    <div className="flex justify-center items-center bg-white rounded-lg md:rounded-xl shadow-2xl mt-6 mb-6 md:mt-6 w-[90%] md:w-[80%]">
+    <div className="flex justify-center items-center bg-white rounded-lg md:rounded-xl shadow-2xl mt-6 mb-6 md:mt-6 w-[90%] md:w-[80%]" id="registration">
       <div className="flex flex-col justify-center items-center p-2 md:p-4 gap-2 md:gap-4">
         <div className="w-full flex justify-center ">
           <img

@@ -3,6 +3,7 @@ import Home from './Home';
 import Info from './Info';
 import Partial from './Partial';
 import Benefits from './Benefits';
+import Meet from './Meet';
 export default function App() {
   const [Loading,setLoading] = useState(true);
 
@@ -28,6 +29,7 @@ export default function App() {
         <Info />
         <Benefits/>
         <Partial/>
+        <Meet/>
         <div className='bg-custom-gradient text-[white] text-xl md:text-4xl text-center w-full p-3'> </div>
       </div>
     )}

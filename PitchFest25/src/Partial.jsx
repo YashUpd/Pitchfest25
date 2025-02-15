@@ -78,6 +78,7 @@ const Logos2 = [
 ];
 const Partial = () => {
   return (
+   <div className="flex flex-col justify-center w-full md:w-[92%] max-w-8xl mx-auto mt-20 md:mt-0">
     <div className="flex flex-col justify-center items-center bg-white rounded-2xl shadow-2xl p-2 mx-4 my-8 sm:m-10 lg:m-28" id="partners">
       <Carousal text={"Partners"} Logos={Logos} />
       
@@ -133,6 +134,7 @@ const Partial = () => {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -70,7 +70,7 @@ function ScrollingTeam({ members }) {
       <div className="relative overflow-hidden">
         <div 
           className="flex animate-scroll hover:[animation-play-state:paused]"
-          style={{ animation: 'scroll 40s linear infinite' }}
+          style={{ animation: 'scroll 10s linear infinite' }}
         >
           {duplicatedMembers.map((member, i) => (
             <div 

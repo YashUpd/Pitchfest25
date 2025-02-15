@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+
 const Carousal = ({ text, Logos }) => {
   return (
     <div className="flex flex-col justify-center items-center p-2 gap-4 w-full">
@@ -8,13 +9,16 @@ const Carousal = ({ text, Logos }) => {
       <Marquee
         pauseOnHover={true}
         speed={80}
+        gradient={false}  
+        loop={0}
+        play={true}
+        autofill={true}        
       >
         <div className="flex justify-center items-center gap-10 sm:gap-16">
           {Logos.map((Logo) => (
             <img
               src={Logo.img}
               key={Logo.id}
-              autoFill={true}
               className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"
               alt="Logo"
             />
@@ -24,4 +28,5 @@ const Carousal = ({ text, Logos }) => {
     </div>
   );
 };
+
 export default Carousal;

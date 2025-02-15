@@ -75,7 +75,7 @@
   ];
   const Partial = () => {
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col " id="partners">
         <Carousal
           text={"Partners"}
           Logos={Logos}

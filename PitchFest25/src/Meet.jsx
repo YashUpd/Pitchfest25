@@ -18,12 +18,12 @@ import Sahil_Kumar from '/assets/Sahil_Kumar.webp';
 function TeamMember({ name, role, image, size = "small", className = "" }) {
   const sizeClasses = {
     large: "col-span-full md:col-span-3 aspect-[3/1]",
-    medium: "col-span-full md:col-span-1 aspect-square w-full max-w-[500px]", // Increased max-width
-    small: "col-span-1 aspect-square",
+    medium: "col-span-full md:col-span-1 aspect-square w-full max-w-[400px]",
+    small: "w-[250px] aspect-square",
   };
 
   return (
-    <div className={`relative ${sizeClasses[size]} ${className}`}>
+    <div className={`${sizeClasses[size]} ${className} relative`}>
       {size === "large" ? (
         <div className="bg-white rounded-[2rem] h-full flex items-center overflow-hidden shadow-lg p-4">
           <div className="relative h-full" style={{ width: '40%' }}>
@@ -42,7 +42,7 @@ function TeamMember({ name, role, image, size = "small", className = "" }) {
           </div>
         </div>
       ) : (
-        <div className="relative w-128">
+        <div className="relative w-full h-full">
           <div className="w-full aspect-square bg-white flex items-center justify-center overflow-hidden rounded-lg shadow-md">
             <img
               src={image}
@@ -63,19 +63,25 @@ function TeamMember({ name, role, image, size = "small", className = "" }) {
 }
 
 function ScrollingTeam({ members }) {
-  const duplicatedMembers = [...members, ...members];
+  const itemWidth = 250; // Match small card width
+  const gap = 24; // Match gap-6 (1.5rem = 24px)
+  const duplicatedMembers = [...members, ...members, ...members, ...members]; // Duplicate 4 times for smoothness
+  const totalWidth = (duplicatedMembers.length * (itemWidth + gap)) - gap;
 
   return (
     <div className="w-full overflow-hidden py-4">
       <div className="relative overflow-hidden">
         <div 
-          className="flex animate-scroll hover:[animation-play-state:paused]"
-          style={{ animation: 'scroll 10s linear infinite' }}
+          className="flex animate-scroll hover:[animation-play-state:paused] gap-6"
+          style={{ 
+            animation: `scroll ${duplicatedMembers.length * 1}s linear infinite`, // Adjust duration
+            width: `${totalWidth}px`
+          }}
         >
           {duplicatedMembers.map((member, i) => (
             <div 
-              key={`${i}`} 
-              className="min-w-[256px] mr-6"
+              key={`${member.name}-${i}`}
+              className="w-[250px] flex-shrink-0"
             >
               <TeamMember 
                 name={member.name}
@@ -91,7 +97,7 @@ function ScrollingTeam({ members }) {
       <style jsx>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-${totalWidth / 2}px); } // Scroll half the total width
         }
       `}</style>
     </div>
@@ -100,18 +106,18 @@ function ScrollingTeam({ members }) {
 
 export default function TeamSection() {
   const teamMembers = [
-    { name: "PALAK WADHWANI", role: "ENTRY MANAGEMENT", image: Palak_Wadhwani },
-    { name: "AKSHAT KABRA", role: "PUBLIC RELATIONS", image: Akshat_Kabra },
-    { name: "RAKSHIT CHAUHAN", role: "MARKETING OUTREACH", image: Rakshit_Chauhan },
-    { name: "TANUJ DHAKAD", role: "SOCIAL MEDIA", image: Tanuj_Dhakad },
-    { name: "RHEA SINGH SUD", role: "PARTNERSHIP", image: Rhea_Singh_Sud },
-    { name: "DHIREN", role: "COVERAGE", image: Dhiren },
-    { name: "YASH UPADHYAY", role: "TECHNICAL", image: Yash_Upadhyay },
-    { name: "IRENE VINU CHERIYAN", role: "CONTENT", image: Irene },
-    { name: "HARSHIT VYAS", role: "OPERATIONS", image: Harshit_Vyas },
-    { name: "PARTH BANSAL", role: "OPERATIONS", image: Parth_Bansal },
-    { name: "SAMPURN GUPTA", role: "SPONSORSHIP", image: Sampurn_Gupta },
-    { name: "SAHIL KUMAR", role: "CREATIVE", image: Sahil_Kumar } // Update image when available
+    { name: "PALAK WADHWANI", role: "ENTRY MANAGEMENT LEAD", image: Palak_Wadhwani },
+    { name: "AKSHAT KABRA", role: "PUBLIC RELATIONS LEAD", image: Akshat_Kabra },
+    { name: "RAKSHIT CHAUHAN", role: "MARKETING OUTREACH LEAD", image: Rakshit_Chauhan },
+    { name: "TANUJ DHAKAD", role: "SOCIAL MEDIA LEAD", image: Tanuj_Dhakad },
+    { name: "RHEA SINGH SUD", role: "PARTNERSHIP LEAD", image: Rhea_Singh_Sud },
+    { name: "DHIREN", role: "COVERAGE LEAD", image: Dhiren },
+    { name: "YASH UPADHYAY", role: "TECHNICAL LEAD", image: Yash_Upadhyay },
+    { name: "IRENE VINU CHERIYAN", role: "CONTENT LEAD", image: Irene },
+    { name: "HARSHIT VYAS", role: "OPERATIONS LEAD", image: Harshit_Vyas },
+    { name: "PARTH BANSAL", role: "OPERATIONS LEAD", image: Parth_Bansal },
+    { name: "SAMPURN GUPTA", role: "SPONSORSHIP LEAD", image: Sampurn_Gupta },
+    { name: "SAHIL KUMAR", role: "CREATIVE LEAD", image: Sahil_Kumar }
   ];
 
   return (
@@ -121,7 +127,6 @@ export default function TeamSection() {
       </h2>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Featured Member - Large Card */}
         <TeamMember 
           name="DAVINDER SINGH" 
           role="FOUNDER & CEO" 
@@ -130,25 +135,21 @@ export default function TeamSection() {
           className="md:col-span-3"
         />
 
-        {/* Lead Organizers - Bigger Medium Cards */}
         <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
           <TeamMember 
             name="NAVAL SRIVASTAVA" 
             role="LEAD ORGANIZER" 
             size="medium" 
             image={Naval_Srivastava}
-            className="max-w-[400px] w-full"
           />
           <TeamMember 
             name="NISHANT PATEL" 
             role="LEAD ORGANIZER" 
             size="medium" 
             image={Nishant_Patel}
-            className="max-w-[400px] w-full"
           />
         </div>
 
-        {/* Bottom Row - Scrolling Carousel */}
         <div className="col-span-full">
           <ScrollingTeam members={teamMembers} />
         </div>

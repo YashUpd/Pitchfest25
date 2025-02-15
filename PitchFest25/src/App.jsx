@@ -5,6 +5,7 @@ import Partial from './Partial';
 import Benefits from './Benefits';
 import Meet from './Meet';
 import Still from './Still'
+import Footer from './Footer';
 export default function App() {
   const [Loading,setLoading] = useState(true);
 
@@ -28,10 +29,11 @@ export default function App() {
       <div className='bg-custom-gradient'>
         <Home />
         <Info />
-        <Benefits/>
         <Still/>
+        <Benefits/>
         <Meet/>
         <Partial/>
+        <Footer/>
       </div>
     )}
   </div>

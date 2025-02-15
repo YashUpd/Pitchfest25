@@ -8,17 +8,14 @@ const Carousal = ({ text, Logos }) => {
       </div>
       <Marquee
         pauseOnHover={true}
-        speed={80}
-        gradient={false}  
-        loop={0}
-        play={true}
-        autofill={true}        
+        speed={70}  
+        autoFill={true}    
       >
         <div className="flex justify-center items-center gap-10 sm:gap-16">
-          {Logos.map((Logo) => (
+          {Logos.map((Logo,index) => (
             <img
               src={Logo.img}
-              key={Logo.id}
+              key={index}
               className="w-20 sm:w-32 md:w-40 lg:w-48 h-auto object-contain"
               alt="Logo"
             />

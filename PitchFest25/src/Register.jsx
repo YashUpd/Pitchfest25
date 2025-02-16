@@ -16,7 +16,7 @@ const Register = () => {
         <div className="w-full flex justify-center ">
           <img
             src="/assets/Head.png"
-            className="w-full rounded-md object-cover"
+            className="w-full rounded-md object-cover "
           />
         </div>
         <div className="flex justify-center items-center w-full h-1/2">

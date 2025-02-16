@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 const Carousal = ({ text, Logos, direction = "left", speed = 30 }) => {
   return (
-    <div className="flex flex-col justify-center items-center p-2 w-full bg-white md:w-[90%] max-w-8xl mx-auto">
+    <div className="flex flex-col justify-center items-center p-2 w-full mx-auto">
       <div className="w-full bg-custom-gradient text-center text-2xl sm:text-3xl md:text-4xl p-4 rounded-t-lg text-yellow-text">
         {text}
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import Davinder_Singh from '/assets/Davinder_Singh.png';
 import Dhiren from '/assets/Dhiren.webp';
 import Yash_Upadhyay from '/assets/Yash_Upadhya.webp';
@@ -15,96 +16,259 @@ import Parth_Bansal from '/assets/Parth_Bansal_.webp';
 import Akshat_Kabra from '/assets/Akshat_Kabra.webp';
 import Sahil_Kumar from '/assets/Sahil_Kumar.webp';
 
-function TeamMember({ name, role, image, size = "small", className = "" }) {
-  const sizeClasses = {
-    large: "col-span-full md:col-span-3 aspect-[3/1]",
-    medium: "col-span-full md:col-span-1 aspect-square w-full max-w-[400px]",
-    small: "w-[250px] aspect-square",
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { 
+    opacity: 0,
+    y: 30,
+    scale: 0.95
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 1
+    }
+  }
+};
+
+const slideUpVariants = {
+  hidden: { y: 60, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.3,
+      duration: 1.2
+    }
+  }
+};
+
+const textVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
+
+const TeamMember = ({ name, role, image, variant = "default" }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  const variants = {
+    hero: (
+      <motion.div 
+        variants={itemVariants}
+        className="w-full bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+      >
+        <div className="flex flex-col md:flex-row items-center p-8 md:p-10 gap-8">
+          <div className="relative w-56 h-56 md:w-64 md:h-64 flex-shrink-0">
+            <motion.div 
+              className="absolute inset-0 bg-yellow-200 rounded-2xl"
+              whileHover={{ rotate: 8, scale: 1.05 }}
+              initial={{ rotate: 3 }}
+              transition={{ duration: 0.4 }}
+            />
+            <motion.div 
+              className="absolute inset-0 flex items-center justify-center"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+            >
+              <img 
+                src={image} 
+                alt={name} 
+                className="w-52 h-52 md:w-60 md:h-60 object-cover rounded-2xl shadow-lg"
+              />
+            </motion.div>
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <motion.h3 
+              className="text-4xl md:text-5xl font-bold text-black mb-4"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+            >
+              {name}
+            </motion.h3>
+            <p className="text-xl md:text-2xl text-black uppercase tracking-wider font-medium">{role}</p>
+          </div>
+        </div>
+      </motion.div>
+    ),
+    
+    leader: (
+      <motion.div 
+        variants={itemVariants}
+        className="relative w-full max-w-sm mx-auto h-full group cursor-pointer"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ y: -8 }}
+        transition={{ duration: 0.4 }}
+      >
+        <motion.div 
+          className="absolute inset-0 bg-yellow-200 rounded-xl"
+          initial={{ rotate: 2 }}
+          animate={{ rotate: isHovered ? 6 : 2, scale: isHovered ? 1.03 : 1 }}
+          transition={{ duration: 0.4 }}
+        />
+        <div className="relative z-10 flex flex-col items-center bg-white rounded-xl p-8 h-full shadow-lg overflow-hidden">
+          <motion.div 
+            className="w-48 h-48 mb-6 overflow-hidden rounded-xl"
+            animate={{ scale: isHovered ? 0.92 : 1 }}
+            transition={{ duration: 0.4 }}
+          >
+            <motion.img 
+              src={image} 
+              alt={name} 
+              className="w-full h-full object-cover"
+              animate={{ scale: isHovered ? 1.15 : 1 }}
+              transition={{ duration: 0.4 }}
+            />
+          </motion.div>
+          
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                className="absolute inset-0 bg-black bg-opacity-75 rounded-xl flex flex-col items-center justify-center p-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.h3 
+                  className="font-bold text-white text-2xl mb-3 text-center"
+                  variants={textVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={0}
+                >
+                  {name}
+                </motion.h3>
+                <motion.p 
+                  className="text-yellow-200 text-center uppercase tracking-wide font-medium"
+                  variants={textVariants}
+                  initial="hidden"
+                  animate="visible"
+                  custom={1}
+                >
+                  {role}
+                </motion.p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </motion.div>
+    ),
+
+    default: (
+      <motion.div 
+        variants={itemVariants}
+        className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
+        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => setIsHovered(false)}
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.4 }}
+      >
+        <motion.div 
+          className="aspect-square bg-gray-100"
+          animate={{ scale: isHovered ? 0.95 : 1 }}
+          transition={{ duration: 0.4 }}
+        >
+          <motion.img 
+            src={image} 
+            alt={name} 
+            className="w-full h-full object-cover"
+            animate={{ scale: isHovered ? 1.2 : 1 }}
+            transition={{ duration: 0.5 }}
+          />
+        </motion.div>
+        
+        <AnimatePresence>
+          {isHovered ? (
+            <motion.div
+              className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="relative"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 20, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+              >
+                <motion.div 
+                  className="absolute -inset-1 bg-yellow-200 rounded-lg opacity-20"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, 0] 
+                  }}
+                  transition={{ 
+                    duration: 1.5,
+                    repeat: Infinity,
+                    repeatType: "reverse" 
+                  }}
+                />
+                <h3 className="font-bold text-white text-lg mb-2 text-center relative z-10">
+                  {name}
+                </h3>
+              </motion.div>
+              
+              <motion.p 
+                className="text-yellow-200 text-sm text-center uppercase tracking-wide font-medium"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 20, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                {role}
+              </motion.p>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </motion.div>
+    )
   };
 
-  return (
-    <div className={`${sizeClasses[size]} ${className} relative`}>
-      {size === "large" ? (
-        <div className="bg-white rounded-[2rem] h-full flex items-center overflow-hidden shadow-lg p-4">
-          <div className="relative h-full" style={{ width: '40%' }}>
-            <div className="absolute inset-2 bg-yellow-200 rounded-[4rem]" />
-            <div className="relative h-full flex items-center justify-center p-4">
-              <img
-                src={image}
-                alt={name}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-          <div className="flex-grow flex flex-col justify-center items-start pl-12">
-            <h3 className="font-bold text-black text-3xl mb-2">{name}</h3>
-            <p className="text-black uppercase text-lg">{role}</p>
-          </div>
-        </div>
-      ) : (
-        <div className="relative w-full h-full">
-          <div className="w-full aspect-square bg-white flex items-center justify-center overflow-hidden rounded-lg shadow-md">
-            <img
-              src={image}
-              alt={name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute bottom-4 left-0 right-0">
-            <div className="bg-yellow-200 mx-4 py-2 px-4 rounded">
-              <h3 className="font-bold text-black text-center text-sm">{name}</h3>
-              <p className="text-black text-center text-xs uppercase">{role}</p>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
+  return variants[variant];
+};
+const TeamGrid = ({ members }) => (
+  <motion.div 
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-50px" }}
+    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8"
+  >
+    {members.map((member, index) => (
+      <TeamMember key={`${member.name}-${index}`} {...member} />
+    ))}
+  </motion.div>
+);
 
-function ScrollingTeam({ members }) {
-  const itemWidth = 250; // Match small card width
-  const gap = 24; // Match gap-6 (1.5rem = 24px)
-  const duplicatedMembers = [...members, ...members, ...members, ...members]; // Duplicate 4 times for smoothness
-  const totalWidth = (duplicatedMembers.length * (itemWidth + gap)) - gap;
-
-  return (
-    <div className="w-full overflow-hidden py-4">
-      <div className="relative overflow-hidden">
-        <div 
-          className="flex animate-scroll hover:[animation-play-state:paused] gap-6"
-          style={{ 
-            animation: `scroll ${duplicatedMembers.length * 1}s linear infinite`, // Adjust duration
-            width: `${totalWidth}px`
-          }}
-        >
-          {duplicatedMembers.map((member, i) => (
-            <div 
-              key={`${member.name}-${i}`}
-              className="w-[250px] flex-shrink-0"
-            >
-              <TeamMember 
-                name={member.name}
-                role={member.role}
-                image={member.image}
-                size="small"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-${totalWidth / 2}px); } // Scroll half the total width
-        }
-      `}</style>
-    </div>
-  );
-}
-
-export default function TeamSection() {
+const TeamSection = () => {
   const teamMembers = [
     { name: "PALAK WADHWANI", role: "ENTRY MANAGEMENT LEAD", image: Palak_Wadhwani },
     { name: "AKSHAT KABRA", role: "PUBLIC RELATIONS LEAD", image: Akshat_Kabra },
@@ -121,39 +285,57 @@ export default function TeamSection() {
   ];
 
   return (
-    <div className="min-h-screen p-6 md:p-12">
-      <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
-        MEET THE TEAM
-      </h2>
+    <div className="min-h-screen p-6 md:p-12 space-y-16 my-20">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={slideUpVariants}
+        className="text-center"
+      >
+        <h2 className="text-5xl md:text-7xl font-bold text-white mb-4">
+          MEET THE TEAM
+        </h2>
+      </motion.div>
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <TeamMember 
-          name="DAVINDER SINGH" 
-          role="FOUNDER & CEO" 
-          size="large" 
-          image={Davinder_Singh}
-          className="md:col-span-3"
-        />
-
-        <div className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+      <div className="max-w-7xl mx-auto space-y-20">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <TeamMember 
+            name="DAVINDER SINGH" 
+            role="FOUNDER & CEO" 
+            image={Davinder_Singh}
+            variant="hero"
+          />
+        </motion.div>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+        >
           <TeamMember 
             name="NAVAL SRIVASTAVA" 
             role="LEAD ORGANIZER" 
-            size="medium" 
             image={Naval_Srivastava}
+            variant="leader"
           />
           <TeamMember 
             name="NISHANT PATEL" 
             role="LEAD ORGANIZER" 
-            size="medium" 
             image={Nishant_Patel}
+            variant="leader"
           />
-        </div>
-
-        <div className="col-span-full">
-          <ScrollingTeam members={teamMembers} />
-        </div>
+        </motion.div>
+        <TeamGrid members={teamMembers} />
       </div>
     </div>
   );
-}
+};
+
+export default TeamSection;

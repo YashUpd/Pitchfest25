@@ -30,9 +30,9 @@ export default function App() {
         <Home />
         <Info />
         <Still/>
+        <Partial/>
         <Benefits/>
         <Meet/>
-        <Partial/>
         <Footer/>
       </div>
     )}

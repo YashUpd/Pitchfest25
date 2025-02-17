@@ -19,9 +19,12 @@ const Still = () => {
               Take the first step towards transforming your idea into a thriving business. Click the button below to start your registration process.
             </p>
             <div className="flex justify-start items-center my-4 md:my-6">
+              <a href="https://forms.gle/RWZ8attztD4MiHAK8" target="_blank" rel="noreferrer">
               <button className="bg-white font-normal py-2 px-6 text-[#FCC15A] text-sm md:text-lg lg:text-xl flex justify-start items-center shadow-lg rounded-md hover:shadow-xl transition-all">
                 Register Here
               </button>
+              </a>
+              
             </div>
           </div>
         </div>

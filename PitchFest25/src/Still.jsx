@@ -27,6 +27,7 @@ const Still = () => {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          viewport={{once:true}}
           className="flex justify-center items-center w-4/5 md:w-1/3 rounded-xl"
         >
           <img
@@ -39,6 +40,7 @@ const Still = () => {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          viewport={{once:true}}
           className="w-full md:w-2/3 bg-[#FFD42E8A] rounded-3xl flex flex-col justify-around items-start p-6 md:p-8 shadow-md"
         >
           <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-black py-2">
@@ -52,6 +54,7 @@ const Still = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
+            viewport={{once:true}}
             className="flex justify-start items-center my-4 md:my-6"
           >
             <motion.button

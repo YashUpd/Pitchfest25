@@ -23,18 +23,21 @@ const Register = () => {
         className="w-full h-1/2 rounded-lg md:rounded-xl shadow-lg object-cover "
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{once:true}}
         transition={{ duration: 1, ease: "easeOut" }}
       />
       <motion.div
         className="flex flex-col md:flex-row items-center md:mt-6 w-full gap-6 h-1/2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once:true}}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
         <motion.div
           className="w-full md:w-1/3 flex justify-center"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{once:true}}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <img
@@ -47,6 +50,7 @@ const Register = () => {
           className="bg-yellow-background p-6 rounded-lg shadow-lg w-full md:w-2/3"
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
+          viewport={{once:true}}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <h1 className="text-lg md:text-2xl font-bold text-black mb-2">
@@ -66,8 +70,6 @@ const Register = () => {
             Take the first step towards transforming your idea into a thriving
             business. Click the button below to start your registration process.
           </p>
-
-          {/* 🔹 Register Button */}
           <motion.button
             className="bg-white font-semibold px-4 py-2 text-[#FCC15A] text-sm md:text-lg flex items-center shadow-lg rounded-md transition-transform hover:scale-105"
             onClick={redirect}

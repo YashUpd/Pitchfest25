@@ -1,4 +1,5 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import { motion, AnimatePresence } from 'motion/react';
 import Davinder_Singh from '/assets/Davinder_Singh.png';
 import Dhiren from '/assets/Dhiren.webp';
@@ -72,9 +73,47 @@ const textVariants = {
     }
   }
 };
+const InfiniteCarousel = ({ members }) => {
+  return (
+    <motion.div
+      className="carousel-container overflow-hidden relative"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+      }}
+    >
+      <div className="w-full h-96 py-6">
+        <Marquee
+          speed={80}
+          gradient={false}
+          pauseOnHover={true}
+          className=""
+        >
+          <motion.div 
+          variants={containerVariants}
+          className="flex space-x-4 md:space-x-6">
+            {[...members, ...members].map((member, index) => (
+              <div
+                key={`${member.name}-${index}`}
+              >
+                <TeamMember {...member} />
+              </div>
+            ))}
+          </motion.div>
+        </Marquee>
+      </div>
+    </motion.div>
+  );
+};
 
 const TeamMember = ({ name, role, image, variant = "default" }) => {
   const [isHovered, setIsHovered] = React.useState(false);
+
+  const handleTouchStart = () => setIsHovered(true);
+  const handleTouchEnd = () => setIsHovered(false);
 
   const variants = {
     hero: (
@@ -122,6 +161,8 @@ const TeamMember = ({ name, role, image, variant = "default" }) => {
         className="relative w-full max-w-sm mx-auto h-full group cursor-pointer"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         whileHover={{ y: -8 }}
         transition={{ duration: 0.4 }}
       >
@@ -183,9 +224,11 @@ const TeamMember = ({ name, role, image, variant = "default" }) => {
     default: (
       <motion.div 
         variants={itemVariants}
-        className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
+        className="relative group overflow-hidden rounded-t-xl rounded-b-xl shadow-lg cursor-pointer w-40 lg:w-60 m-2"
         onHoverStart={() => setIsHovered(true)}
         onHoverEnd={() => setIsHovered(false)}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         whileHover={{ y: -5 }}
         transition={{ duration: 0.4 }}
       >
@@ -254,19 +297,6 @@ const TeamMember = ({ name, role, image, variant = "default" }) => {
 
   return variants[variant];
 };
-const TeamGrid = ({ members }) => (
-  <motion.div 
-    variants={containerVariants}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-50px" }}
-    className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8"
-  >
-    {members.map((member, index) => (
-      <TeamMember key={`${member.name}-${index}`} {...member} />
-    ))}
-  </motion.div>
-);
 
 const TeamSection = () => {
   const teamMembers = [
@@ -285,7 +315,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <div className="min-h-screen p-6 md:p-12 space-y-16 my-20">
+    <div className="min-h-screen p-6 md:p-12 space-y-16 md:mt-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -332,7 +362,7 @@ const TeamSection = () => {
             variant="leader"
           />
         </motion.div>
-        <TeamGrid members={teamMembers} />
+        <InfiniteCarousel members={teamMembers} />
       </div>
     </div>
   );

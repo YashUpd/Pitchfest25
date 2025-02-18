@@ -10,7 +10,7 @@ const Register = () => {
 
   return (
     <motion.div
-      className="flex flex-col items-center bg-white rounded-lg md:rounded-xl shadow-2xl w-[90%] md:w-[80%] mx-auto mt-6 mb-6 md:mt-6 p-4 md:p-6"
+      className="flex flex-col items-center bg-white rounded-lg md:rounded-xl shadow-2xl w-[90%] md:w-[80%] h-full mx-auto mt-6 mb-6 md:mt-6 p-4 md:p-6"
       id="registration"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -20,13 +20,13 @@ const Register = () => {
       <motion.img
         src="/assets/Head.png"
         alt="Pitchfest Banner"
-        className="w-full rounded-lg md:rounded-xl shadow-lg object-cover"
+        className="w-full h-1/2 rounded-lg md:rounded-xl shadow-lg object-cover "
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
       />
       <motion.div
-        className="flex flex-col md:flex-row items-center mt-6 w-full gap-6"
+        className="flex flex-col md:flex-row items-center md:mt-6 w-full gap-6 h-1/2"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -40,7 +40,7 @@ const Register = () => {
           <img
             src="/assets/Register.png"
             alt="Register Now"
-            className="w-40 md:w-full rounded-lg object-contain"
+            className="w-40 md:w-full rounded-lg object-contain hidden md:block"
           />
         </motion.div>
         <motion.div

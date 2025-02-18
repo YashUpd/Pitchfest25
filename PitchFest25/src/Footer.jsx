@@ -3,7 +3,7 @@ import { IoGlobeOutline } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
 const Footer = () =>{
     return(
-        <div className="bg-custom-gradient-darker w-full rounded-lg px-6 py-4 mt-20">
+        <div className="bg-custom-gradient-darker w-full rounded-lg px-6 py-4">
         <div className="flex flex-row sm:flex-col justify-between sm:justify-start items-center sm:items-start sm:grid sm:grid-cols-4 gap-6 sm:gap-4">
           <a
             className="flex justify-center items-center hover:scale-110 transition-transform duration-200"

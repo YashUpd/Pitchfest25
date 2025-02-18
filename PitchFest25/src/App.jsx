@@ -29,9 +29,9 @@ export default function App() {
       <div className='bg-custom-gradient'>
         <Home />
         <Info />
-        <Still/>
-        <Partial/>
         <Benefits/>
+        <Partial/>
+        <Still/>
         <Meet/>
         <Footer/>
       </div>

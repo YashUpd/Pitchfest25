@@ -75,7 +75,8 @@
   ];
   const Partial = () => {
     return (
-      <div className="flex flex-col bg-white w-[90%] md:w-[80%] max-w-8xl mx-auto rounded-lg md:rounded-xl">
+
+      <div id="partners" className="flex flex-col bg-white w-[90%] md:w-[80%] max-w-8xl mx-auto rounded-lg md:rounded-xl">
         <Carousal
           text={"Partners"}
           Logos={Logos}
@@ -85,7 +86,7 @@
         <Carousal
           text={"Eco System Partners"}
           Logos={Logos1}
-          speed={30}
+          speed={40}
           direction="left"
         />
         <Carousal

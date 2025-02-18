@@ -80,7 +80,7 @@
         <Carousal
           text={"Partners"}
           Logos={Logos}
-          speed={80}
+          speed={40}
           direction="left"
         />
         <Carousal
